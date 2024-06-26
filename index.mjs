@@ -14,7 +14,7 @@ export const handler = async (event) => {
         for (const userId of userIdsArray) {
             const params = {
                 TableName: "partner_connections",
-                KeyConditionExpression: "UserId = :userId",
+                KeyConditionExpression: "user_id = :userId",
                 ExpressionAttributeValues: {
                     ":userId": userId,
                 },
