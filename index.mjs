@@ -6,10 +6,8 @@ const dynamo_db_client = DynamoDBDocumentClient.from(new DynamoDB({ region }));
 
 export const handler = async (event) => {
     try {
-        const { UserIds } = event.queryStringParameters;
-        const userIdsArray = UserIds.split(',');
-
-        // Define the parameters for the batch get operation
+        const { userIds } = event.queryStringParameters;
+        const userIdsArray = userIds.split(',');
         const params = {
             RequestItems: {
                 partner_connections: {
